@@ -14,4 +14,5 @@ public class SugestaoAtivoBolsaDto {
     private BigDecimal preco;
     private String motivo;
     private BigDecimal confianca; // 0-100
+    private String setor; // Setor da empresa (ex: Energia, Mineração, etc)
 }

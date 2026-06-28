@@ -18,7 +18,8 @@ public class SugestoesBolsaService {
                 "Magazine Luiza",
                 new BigDecimal("4.25"),
                 "Recuperação de tendência de longo prazo",
-                new BigDecimal("78.50")
+                new BigDecimal("78.50"),
+                "Varejo"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -26,7 +27,8 @@ public class SugestoesBolsaService {
                 "Asaí Atacadista",
                 new BigDecimal("14.80"),
                 "Crescimento do segmento de varejo",
-                new BigDecimal("82.00")
+                new BigDecimal("82.00"),
+                "Varejo"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -34,7 +36,8 @@ public class SugestoesBolsaService {
                 "Mobilya",
                 new BigDecimal("8.90"),
                 "Potencial de expansão doméstica",
-                new BigDecimal("65.25")
+                new BigDecimal("65.25"),
+                "Varejo"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -42,7 +45,8 @@ public class SugestoesBolsaService {
                 "Vale S.A.",
                 new BigDecimal("58.40"),
                 "Trending em commodities",
-                new BigDecimal("85.00")
+                new BigDecimal("85.00"),
+                "Mineração"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -50,7 +54,8 @@ public class SugestoesBolsaService {
                 "Petrobras",
                 new BigDecimal("32.10"),
                 "Faltam no portfolio - dividendos",
-                new BigDecimal("76.75")
+                new BigDecimal("76.75"),
+                "Energia"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -58,7 +63,8 @@ public class SugestoesBolsaService {
                 "WEG S.A.",
                 new BigDecimal("97.80"),
                 "Diversificação - engenharia",
-                new BigDecimal("88.50")
+                new BigDecimal("88.50"),
+                "Indústria"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -66,7 +72,8 @@ public class SugestoesBolsaService {
                 "Itaú Unibanco",
                 new BigDecimal("27.50"),
                 "Faltam no portfolio - setor financeiro",
-                new BigDecimal("79.25")
+                new BigDecimal("79.25"),
+                "Financeiro"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -74,7 +81,8 @@ public class SugestoesBolsaService {
                 "B3 S.A.",
                 new BigDecimal("12.65"),
                 "Trending - infraestrutura",
-                new BigDecimal("81.00")
+                new BigDecimal("81.00"),
+                "Financeiro"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -82,7 +90,8 @@ public class SugestoesBolsaService {
                 "Lojas Renner",
                 new BigDecimal("21.90"),
                 "Recuperação pós-queda",
-                new BigDecimal("72.40")
+                new BigDecimal("72.40"),
+                "Varejo"
         ));
 
         sugestoes.add(new SugestaoAtivoBolsaDto(
@@ -90,7 +99,8 @@ public class SugestoesBolsaService {
                 "Banco do Brasil",
                 new BigDecimal("41.35"),
                 "Faltam no portfolio - financeiro estatal",
-                new BigDecimal("74.80")
+                new BigDecimal("74.80"),
+                "Financeiro"
         ));
 
         return sugestoes.stream()
