@@ -1,0 +1,24 @@
+# Maven
+target/
+*.jar
+*.war
+*.nar
+*.ear
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local
+.env
+.env.local
+application-local.yml

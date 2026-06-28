@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: bolsa-app-backend
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+server:
+  port: 9002
+  servlet:
+    context-path: /
+
+app:
+  auth:
+    app-academia-url: http://localhost:9001
+    validate-token-endpoint: /api/auth/validate-token
