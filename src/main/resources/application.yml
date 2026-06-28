@@ -3,7 +3,7 @@ spring:
     name: bolsa-app-backend
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
@@ -12,6 +12,8 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+  flyway:
+    locations: classpath:db/migration
 
 server:
   port: 9002
