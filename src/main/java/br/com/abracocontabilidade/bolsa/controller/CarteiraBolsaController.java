@@ -1,6 +1,6 @@
 package br.com.abracocontabilidade.bolsa.controller;
 
-import br.com.abracocontabilidade.bolsa.dto.HoldingCarteiraBolsaDto;
+import br.com.abracocontabilidade.bolsa.dto.CarteiraBolsaDto;
 import br.com.abracocontabilidade.bolsa.service.CarteiraBolsaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class CarteiraBolsaController {
     private final CarteiraBolsaService carteiraBolsaService;
 
     @GetMapping
-    public ResponseEntity<List<HoldingCarteiraBolsaDto>> obterCarteira() {
+    public ResponseEntity<List<CarteiraBolsaDto>> obterCarteira() {
         return ResponseEntity.ok(carteiraBolsaService.obterCarteira());
     }
 }

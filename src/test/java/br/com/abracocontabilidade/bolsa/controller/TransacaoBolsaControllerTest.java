@@ -32,7 +32,7 @@ class TransacaoBolsaControllerTest {
     private TransacaoBolsaService transacaoBolsaService;
 
     @Test
-    void deveCriarTransacaoComIDGerado() throws Exception {
+    void deveCriarTransacaoDeCompraComSucesso() throws Exception {
         TransacaoBolsaDto entrada = new TransacaoBolsaDto(null, "PETR4", 100, new BigDecimal("28.50"), "COMPRA", LocalDateTime.now());
         TransacaoBolsaDto saida = new TransacaoBolsaDto(1L, "PETR4", 100, new BigDecimal("28.50"), "COMPRA", LocalDateTime.now());
 
@@ -41,8 +41,22 @@ class TransacaoBolsaControllerTest {
         mockMvc.perform(post("/api/bolsa/transacao")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(entrada)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id", equalTo(1)))
-                .andExpect(jsonPath("$.simbolo", equalTo("PETR4")));
+                .andExpect(jsonPath("$.simbolo", equalTo("PETR4")))
+                .andExpect(jsonPath("$.tipo", equalTo("COMPRA")));
+    }
+
+    @Test
+    void deveRejeitarVendaSemSaldoSuficiente() throws Exception {
+        TransacaoBolsaDto entrada = new TransacaoBolsaDto(null, "PETR4", 200, new BigDecimal("28.50"), "VENDA", LocalDateTime.now());
+
+        when(transacaoBolsaService.criarTransacao(entrada))
+                .thenThrow(new IllegalArgumentException("Saldo insuficiente para VENDA"));
+
+        mockMvc.perform(post("/api/bolsa/transacao")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(entrada)))
+                .andExpect(status().isBadRequest());
     }
 }
