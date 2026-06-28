@@ -43,4 +43,19 @@ public class AtivoBolsaService {
 
         return new PageImpl<>(filtrados, pageable, filtrados.size());
     }
+
+    public AtivoBolsaDto obterAtivoPorId(Long id) {
+        List<AtivoBolsaDto> todosAtivos = obterTodosAtivos();
+
+        // Simulação de ID: PETR4 = 1, VALE3 = 2, WEGE3 = 3, etc.
+        if (id == null || id <= 0) {
+            throw new IllegalArgumentException("ID do ativo deve ser maior que zero");
+        }
+
+        if (id > todosAtivos.size()) {
+            throw new IllegalArgumentException("Ativo não encontrado");
+        }
+
+        return todosAtivos.get(id.intValue() - 1);
+    }
 }

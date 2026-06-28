@@ -33,8 +33,8 @@ class TransacaoBolsaControllerTest {
 
     @Test
     void deveCriarTransacaoDeCompraComSucesso() throws Exception {
-        TransacaoBolsaDto entrada = new TransacaoBolsaDto(null, "PETR4", 100, new BigDecimal("28.50"), "COMPRA", LocalDateTime.now());
-        TransacaoBolsaDto saida = new TransacaoBolsaDto(1L, "PETR4", 100, new BigDecimal("28.50"), "COMPRA", LocalDateTime.now());
+        TransacaoBolsaDto entrada = new TransacaoBolsaDto(null, 1L, "PETR4", 100, new BigDecimal("28.50"), "COMPRA", LocalDateTime.now());
+        TransacaoBolsaDto saida = new TransacaoBolsaDto(1L, 1L, "PETR4", 100, new BigDecimal("28.50"), "COMPRA", LocalDateTime.now());
 
         when(transacaoBolsaService.criarTransacao(entrada)).thenReturn(saida);
 
@@ -49,7 +49,7 @@ class TransacaoBolsaControllerTest {
 
     @Test
     void deveRejeitarVendaSemSaldoSuficiente() throws Exception {
-        TransacaoBolsaDto entrada = new TransacaoBolsaDto(null, "PETR4", 200, new BigDecimal("28.50"), "VENDA", LocalDateTime.now());
+        TransacaoBolsaDto entrada = new TransacaoBolsaDto(null, 1L, "PETR4", 200, new BigDecimal("28.50"), "VENDA", LocalDateTime.now());
 
         when(transacaoBolsaService.criarTransacao(entrada))
                 .thenThrow(new IllegalArgumentException("Saldo insuficiente para VENDA"));

@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class TransacaoBolsaDto {
     private Long id;
+    private Long usuarioId;
     private String simbolo;
     private Integer quantidade;
     private BigDecimal preco;

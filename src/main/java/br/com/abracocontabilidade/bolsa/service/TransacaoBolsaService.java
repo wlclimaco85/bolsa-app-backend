@@ -21,14 +21,31 @@ public class TransacaoBolsaService {
     }
 
     private void validarTransacao(TransacaoBolsaDto transacao) {
+        // Validar usuarioId
+        if (transacao.getUsuarioId() == null) {
+            throw new IllegalArgumentException("Usuário ID é obrigatório");
+        }
+
+        if (transacao.getUsuarioId() <= 0) {
+            throw new IllegalArgumentException("Usuário ID deve ser maior que zero");
+        }
+
+        // Validar tipo
+        if (transacao.getTipo() == null || (!transacao.getTipo().equalsIgnoreCase("COMPRA") && !transacao.getTipo().equalsIgnoreCase("VENDA"))) {
+            throw new IllegalArgumentException("Tipo de transação deve ser COMPRA ou VENDA");
+        }
+
+        // Validar quantidade
         if (transacao.getQuantidade() == null || transacao.getQuantidade() <= 0) {
             throw new IllegalArgumentException("Quantidade deve ser maior que zero");
         }
 
+        // Validar preço
         if (transacao.getPreco() == null || transacao.getPreco().signum() <= 0) {
             throw new IllegalArgumentException("Preço deve ser maior que zero");
         }
 
+        // Validar saldo para VENDA
         if ("VENDA".equalsIgnoreCase(transacao.getTipo())) {
             validarSaldoVenda(transacao.getSimbolo(), transacao.getQuantidade());
         }
