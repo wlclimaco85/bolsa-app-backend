@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: bolsa-app-backend
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+  datasource:
+    url: ${DATABASE_URL}
+    driver-class-name: org.postgresql.Driver
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  flyway:
+    locations: classpath:db/migration
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /
+
+app:
+  auth:
+    app-academia-url: ${APP_ACADEMIA_URL:http://localhost:9001}
+    validate-token-endpoint: /api/auth/validate-token
+
