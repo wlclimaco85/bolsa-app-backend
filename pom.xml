@@ -64,6 +64,14 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- PostgreSQL Driver -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.1</version>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- H2 (em memória para testes) -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -115,3 +123,4 @@
         </plugins>
     </build>
 </project>
+
